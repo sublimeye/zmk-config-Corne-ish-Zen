@@ -41,7 +41,7 @@
    &kp CAPS  &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I    &kp O   &kp P    &kp LBKT
    &none     XC_A  XC_S  XC_D  XC_F  &kp G    &kp H XC_J  XC_K     XC_L    XC_SCLN  &kp QUOT
    &none     &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp DOT &kp FSLH &none
-                     &none     NUM     SYM    NAV   &none   &none
+                     ADJ     NUM     SYM    NAV   &none   &none
                         >;
                 };
 
@@ -58,10 +58,10 @@
                 navigation_layer {
                         label = "NAVIGATION";
                         bindings = < 
-   &none &none &none &none &none  &none             &none         &kp LA(LEFT) &kp UP       &kp LA(RIGHT) &kp LG(TILDE) &none
-   &none &none &kp LALT &kp LSHFT &kp LGUI          &kp TAB       &kp LEFT     &kp DOWN     &kp RIGHT     &kp ENTER     &none
-   &none &none &none &none &none  &none             &kp LG(BSPC)  &kp BSPC     &kp LA(BSPC) &kp DEL       &kp LC(K)     &none
-            &none     &kp LSHFT   SYM               NAV           &none        &none
+   &none &none &none    &none     &none    &none        &none         &kp LA(LEFT) &kp UP       &kp LA(RIGHT) &kp LG(TILDE) &none
+   &none &none &kp LALT &kp LSHFT &kp LGUI &none        &kp TAB       &kp LEFT     &kp DOWN     &kp RIGHT     &kp ENTER     &none
+   &none &none &none    &none     &none    &none        &kp LG(BSPC)  &kp BSPC     &kp LA(BSPC) &kp DEL       &kp LC(K)     &none
+            &none     &kp LSHFT   SYM                   NAV           &none        &none
                         >;
                 };
 
