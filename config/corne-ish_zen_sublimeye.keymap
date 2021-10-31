@@ -16,7 +16,7 @@
 #define ADJUST 4
 
 #define SYM &lt SYMBOL ESC
-#define NAV &lt NAVIGATION SPC
+#define NAV &lt NAVIGATION SPACE
 #define NUM &mo NUMBER
 #define ADJ &mo ADJUST
 
@@ -58,20 +58,20 @@
                 navigation_layer {
                         label = "NAVIGATION";
                         bindings = < 
-   &none &none &none    &none     &none    &none        &none         &kp LA(LEFT) &kp UP       &kp LA(RIGHT) &kp LG(TILDE) &none
-   &none &none &kp LALT &kp LSHFT &kp LGUI &none        &kp TAB       &kp LEFT     &kp DOWN     &kp RIGHT     &kp ENTER     &none
-   &none &none &none    &none     &none    &none        &kp LG(BSPC)  &kp BSPC     &kp LA(BSPC) &kp DEL       &kp LC(K)     &none
-            &none     &kp LSHFT            SYM          NAV           &none        &none
+   &none &none &none    &none     &none      &none                &none         &kp LA(LEFT) &kp UP       &kp LA(RIGHT) &kp LG(TILDE) &none
+   &none &none &kp LALT &kp LSHFT &kp LGUI   &none                &kp TAB       &kp LEFT     &kp DOWN     &kp RIGHT     &kp ENTER     &none
+   &none &none &none    &none     &none      &none                &kp LG(BSPC)  &kp BSPC     &kp LA(BSPC) &kp DEL       &kp LC(K)     &none
+            &none                 NUM        SYM                  NAV           &none        &none
                         >;
                 };
 
                 numpad_layer {
                         label = "NUMBER";
                         bindings = < 
-   &none &none &none &none &none &none    &kp KP_PLUS    &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &none
-   &none &none &none &none &none &none    &kp KP_MINUS   &kp N4 &kp N5 &kp N6 &kp N0  &none
-   &none &none &none &none &none &none    &kp KP_EQUAL   &kp N1 &kp N2 &kp N3 &kp PRCNT &none
-                     &none     NUM        SYM            NAV   &none   &none
+   &none &none &none &none &none &none                  &kp KP_PLUS    &kp N7 &kp N8 &kp N9 &kp KP_MULTIPLY &none
+   &none &none &none &none &none &none                  &kp KP_MINUS   &kp N4 &kp N5 &kp N6 &kp N0  &none
+   &none &none &none &none &none &none                  &kp KP_EQUAL   &kp N1 &kp N2 &kp N3 &kp PRCNT &none
+                     &none     NUM  SYM                 NAV   &none   &none
                         >;
                 };
 
@@ -81,7 +81,7 @@
    &none &none &kp C_PREV   &kp C_NEXT    &kp C_MUTE       &none        &none &none &none &none &none &none 
    &none &none &kp C_VOL_DN &kp C_VOL_UP  &kp C_PLAY_PAUSE &none        &none &none &none &none &none &none 
    &none &none &none        &kp C_BRI_DEC &kp C_BRI_INC    &none        &none &none &none &none &none &none 
-                     &none     NUM                         SYM          NAV   &none   &none
+                     &none                NUM              SYM          NAV   &none   &none
                         >;
                 };
 
