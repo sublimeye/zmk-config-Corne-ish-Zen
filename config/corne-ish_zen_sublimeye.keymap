@@ -54,35 +54,36 @@
                      &none     NUM     SYM                    NAV   &none   &none
                         >;
                 };
-// finish number++
+
+                navigation_layer {
+                        label = "NAVIGATION";
+                        bindings = < 
+   &none &none &none &none &none  &none             &none         &kp LA(LEFT) &kp UP       &kp LA(RIGHT) &kp LG(TILDE) &none
+   &none &none &kp LALT &kp LSHFT &kp LGUI          &kp TAB       &kp LEFT     &kp DOWN     &kp RIGHT     &kp ENTER     &none
+   &none &none &none &none &none  &none             &kp LG(BSPC)  &kp BSPC     &kp LA(BSPC) &kp DEL       &kp LC(K)     &none
+            &none     &kp LSHFT   SYM               NAV           &none        &none
+                        >;
+                };
+
                 numpad_layer {
                         label = "NUMBER";
                         bindings = < 
-   &kp TAB     &none &none &none &none &none    &kp KP_EQUAL    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS &kp BSPC
-   &kp KP_NLCK &none &none &none &none &none    &kp KP_ASTERISK &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &none
-   &tog NUMPAD &none &none &none &none &none    &kp KP_SLASH    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_ENTER &none
-              &mo CONFIG &kp LCTL &mo NUMROW    &kp SPC &kp KP_N0 &kp KP_DOT
+   &none &none &none &none &none &none    &kp KP_PLUS    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_ASTERISK &none
+   &none &none &none &none &none &none    &kp KP_MINUS   &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_N0  &none
+   &none &none &none &none &none &none    &kp KP_EQUAL   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp PRCNT &none
+                     &none     NUM        SYM            NAV   &none   &none
                         >;
                 };
 
                 adjust_layer {
                         label = "ADJUST";
                         bindings = <
-   &kp F1      &kp F2  &kp F3   &kp F4    &kp F5 &kp F6    &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
-   &kp CAPS    &kp INS &kp HOME &kp PG_UP &none  &none     &kp LEFT &kp DOWN &kp UP &kp RIGHT &none   &none
-   &tog NUMPAD &kp DEL &kp END  &kp PG_DN &none  &none     &none    &none    &none  &none     &none   &none
-                           &kp LGUI &kp LCTL &mo NUMROW    &kp SPC &mo ADJUST &none
+   &none &none &kp C_PREV   &kp C_NEXT    &kp C_MUTE       &none        &none &none &none &none &none &none 
+   &none &none &kp C_VOL_DN &kp C_VOL_UP  &kp C_PLAY_PAUSE &none        &none &none &none &none &none &none 
+   &none &none &none        &kp C_BRI_DEC &kp C_BRI_INC    &none        &none &none &none &none &none &none 
+                     &none     NUM                         SYM          NAV   &none   &none
                         >;
                 };
 
-                config_layer {
-                        label = "CONFIG";
-                        bindings = <
-   &reset     &none        &none        &none        &none        &none           &none &none &none &none &none &none 
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &none &none &none &none &none
-   &none      &none        &none        &none        &none        &none           &none &none &none &none &none &none
-                                                &mo CONFIG &kp LCTL &mo NUMROW    &kp SPC &mo ADJUST &kp F13
-                        >;
-                };
         };
 };
