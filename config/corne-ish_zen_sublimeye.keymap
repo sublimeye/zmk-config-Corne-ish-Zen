@@ -1,0 +1,88 @@
+/*
+*
+* Copyright (c) 2021 lowprokb.ca
+* SPDX-License-Identifier: MIT
+*
+*/
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define QWERTY 0
+#define SYMBOL 1
+#define NAVIGATION 2
+#define NUMBER 3
+#define ADJUST 4
+
+#define SYM &lt SYMBOL ESC
+#define NAV &lt NAVIGATION SPC
+#define NUM &mo NUMBER
+#define ADJ &mo ADJUST
+
+#define XC_A &mt LCTRL A
+#define XC_S &mt LALT S
+#define XC_D &mt LSHFT D
+#define XC_F &mt LGUI F
+
+#define XC_J &mt RGUI J
+#define XC_K &mt RSHFT K
+#define XC_L &mt RALT L
+#define XC_SCLN &mt RCTRL SEMI
+
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+                        label = "QWERTY";
+                        bindings = <
+   &kp CAPS  &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I    &kp O   &kp P    &kp LBKT
+   &none     XC_A  XC_S  XC_D  XC_F  &kp G    &kp H XC_J  XC_K     XC_L    XC_SCLN  &kp QUOT
+   &none     &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp CMMA &kp DOT &kp FSLH &none
+                     &none     NUM     SYM    NAV   &none   &none
+                        >;
+                };
+
+                symbol_layer {
+                        label = "SYMBOL";
+                        bindings = <
+   &none &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT      &kp CARET   &kp AMPS  &kp ASTRK   &kp PLUS   &none      &none
+   &none &kp TILDE &kp LBKT &kp PIPE &kp EQUAL &none          &kp LBRC    &kp LPAR  &kp DQT     &kp MINUS  &kp QUOT   &none
+   &none &kp GRAVE &kp RBKT &kp BSLH &kp UNDER &none          &kp RBRC    &kp RPAR  &kp LT      &kp GT     &kp QMARK  &none
+                     &none     NUM     SYM                    NAV   &none   &none
+                        >;
+                };
+// finish number++
+                numpad_layer {
+                        label = "NUMBER";
+                        bindings = < 
+   &kp TAB     &none &none &none &none &none    &kp KP_EQUAL    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS &kp BSPC
+   &kp KP_NLCK &none &none &none &none &none    &kp KP_ASTERISK &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS  &none
+   &tog NUMPAD &none &none &none &none &none    &kp KP_SLASH    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_ENTER &none
+              &mo CONFIG &kp LCTL &mo NUMROW    &kp SPC &kp KP_N0 &kp KP_DOT
+                        >;
+                };
+
+                adjust_layer {
+                        label = "ADJUST";
+                        bindings = <
+   &kp F1      &kp F2  &kp F3   &kp F4    &kp F5 &kp F6    &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
+   &kp CAPS    &kp INS &kp HOME &kp PG_UP &none  &none     &kp LEFT &kp DOWN &kp UP &kp RIGHT &none   &none
+   &tog NUMPAD &kp DEL &kp END  &kp PG_DN &none  &none     &none    &none    &none  &none     &none   &none
+                           &kp LGUI &kp LCTL &mo NUMROW    &kp SPC &mo ADJUST &none
+                        >;
+                };
+
+                config_layer {
+                        label = "CONFIG";
+                        bindings = <
+   &reset     &none        &none        &none        &none        &none           &none &none &none &none &none &none 
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &none &none &none &none &none
+   &none      &none        &none        &none        &none        &none           &none &none &none &none &none &none
+                                                &mo CONFIG &kp LCTL &mo NUMROW    &kp SPC &mo ADJUST &kp F13
+                        >;
+                };
+        };
+};
